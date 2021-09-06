@@ -1,18 +1,19 @@
 {
   "scripts": {
-  "cy:open": "./node_modules/.bin/cypress open",
-  "cy:run": "npm run cy:clean && ./node_modules/.bin/cypress run --config video=false",
-  "cy:clean": "rmdir -fr mochawesome-report",
-  "cy:merge-reports": "mochawesome-merge --reportDir mochawesome-report > mochawesome-report/output.json",
-  "cy:generate-report": "npx marge mochawesome-report/mochawesome.json",
-  "cy:run-with-report": "npm run cy:run && npm run cy:generate-report"
+    "cy:open": "./node_modules/.bin/cypress open",
+    "cy:run": "./node_modules/.bin/cypress run",
+    "cy:clean": "rm -fr mochawesome-report",
+    "cy:merge-reports": "mochawesome-merge --reportDir mochawesome-report > mochawesome-report/output.json",
+    "cy:generate-report": "marge mochawesome-report/mochawesome.json",
+    "cy:run-with-report": "npm run cy:run -and npm run cy:generate-report"
   },
   "devDependencies": {
-    "cypress": "^8.3.1"
+    "cypress": "^8.3.1",
+    "mocha": "^9.1.1",
+    "mochawesome": "^6.2.2"
   },
   "dependencies": {
     "cypress-multi-reporters": "^1.5.0",
-    "mocha": "^9.1.1",
     "mocha-junit-reporters": "^1.23.6"
   }
 }
