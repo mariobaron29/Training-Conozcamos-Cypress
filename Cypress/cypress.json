@@ -1,0 +1,7 @@
+ {
+    "baseUrl": "https://apiumhub.com",
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporterConfig.json"
+ }
+ }
